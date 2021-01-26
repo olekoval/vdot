@@ -10,16 +10,16 @@ app = Flask(__name__)
 
 @app.route('/entry')
 def entry_page() -> 'html':
-"""        
-отображение формы ввода данных - entry.html с дальнейшей передачей данных по методу
-POST из формы на URL '/searhvdot' для вывода темпов тренировок
+    """        
+    отображение формы ввода данных - entry.html с дальнейшей передачей данных по методу
+    POST из формы на URL '/searhvdot' для вывода темпов тренировок
     return render_template('entry.html', the_title='Определение темпа')
-"""
+    """
     return render_template('entry.html', the_title='YES')
 
 
 @app.route('/searchdot', methods=['POST'])
-def do_search() ->str:
+def do_search() ->'html':
     title = 'Результаты расчета'
     hr = requst.form['hr'] # часы
     mt = requst.form['mt'] # минуты

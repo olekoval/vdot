@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block body %}
 <h2>{{ the_title }}</h2>
-<form action=('/searchdot') method='POST'>
+<form action='/searchdot' method='POST'>
     <p>
         Дистанция:<br>
         <input type="radio" name='s' value='5km'>5 км<br>
@@ -15,9 +15,9 @@
             <th>Секунды</th>
         </tr>
         <tr>
-            <td><input type='number' name='hr' min='0'></td>
-            <td><input type='number' name='mt' min='0'</td>
-            <td><input type='number' name='sc' min='0' max='60'></td>
+            <td><input type='text' name='hr' min='0'></td>
+            <td><input type='text' name='mt' min='0'</td>
+            <td><input type='text' name='sc' min='0' max='60'></td>
         </tr>
     </table>
     <p><input type='submit' value='OK'></p>
