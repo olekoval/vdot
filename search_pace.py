@@ -18,12 +18,13 @@ POST из формы на URL '/searhvdot' для вывода темпов тр
     return render_template('entry.html', the_title='YES')
     
 
-#finish = datetime.timedelta(hours = 0, minutes = 62, seconds = 1) # данные от пользователя
-#s = '10km' # 10km - получить от пользователя
+
 
 
 @app.route('/searchdot')
 def do_search() ->str:
+    #finish = datetime.timedelta(hours = 0, minutes = 62, seconds = 1) # данные от пользователя
+    #s = '10km' # 10km - получить от пользователя
     dist = {'5km':km_5, '10km':km_10}
     return find_vdot(finish, dist[s]) # list_vdot.km_10 список времен финиширования
 #print(VDOT)
