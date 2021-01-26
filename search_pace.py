@@ -29,6 +29,6 @@ def do_search() ->str:
     #s = '10km' # 10km - получить от пользователя
     dist = {'5km':km_5, '10km':km_10}
     #return find_vdot(finish, dist[s]) # list_vdot.km_10 список времен финиширования
-    return render_template('results.html', the_hr, the_mt, the_sc, the_s,)
+    return render_template('results.html', the_hr=hr, the_mt=mt, the_sc=sc, the_s=s, the_title=title)
 
 app.run()
