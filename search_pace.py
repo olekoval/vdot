@@ -27,7 +27,7 @@ def do_search() ->'html':
     sc = request.form['sc'] # секунды
     s = request.form['s'] # дистанция
     finish = datetime.timedelta(hours = int(hr), minutes = int(mt), seconds = int(sc)) # время завершения дистанции     
-    vdot = find_vdot(finish, dist[s])
+    vdot = str(find_vdot(finish, dist[s]))
     the_e = pace[vdot]['e'] # pace easy
     the_m = pace[vdot]['m'] # pace marathon
     the_t400 = pace[vdot]['t400'] # pace threshold 400m
@@ -41,5 +41,4 @@ def do_search() ->'html':
     return render_template('pace.html', the_e, the_m, the_t400,
                            the_t1000, the_i400, the_i1000, the_i1200,
                            the_r200, the_r400, the_r800, the_title=title)
-
 app.run()
