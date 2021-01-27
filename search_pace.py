@@ -21,10 +21,10 @@ def entry_page() -> 'html':
 @app.route('/searchdot', methods=['POST'])
 def do_search() ->'html':
     title = 'Результаты расчета'
-    hr = requst.form['hr'] # часы
-    mt = requst.form['mt'] # минуты
-    sc = requst.form['sc'] # секунды
-    s = requst.form['s'] # дистанция
+    hr = request.form['hr'] # часы
+    mt = request.form['mt'] # минуты
+    sc = request.form['sc'] # секунды
+    s = request.form['s'] # дистанция
     #finish = datetime.timedelta(hours = 0, minutes = 62, seconds = 1) # данные от пользователя
     #s = '10km' # 10km - получить от пользователя
     dist = {'5km':km_5, '10km':km_10}
