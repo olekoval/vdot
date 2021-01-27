@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2>{{ the_title }}</h2>
+<table>
+  <tr><td>Easy:</td><td>{{the_e}}</td></tr>
+  <tr><td>Marathon:</td><td>{{the_m}}</td></tr>
+  <tr><td>Threshold 400 m:</td><td>{{the_t400}}</td></tr>
+  <tr><td>Threshold 1000 m:</td><td>{{the_t1000}}</td></tr>
+  <tr><td>Interval 400 m:</td><td>{{the_i400}}</td></tr>
+  <tr><td>Interval 1000 m:</td><td>{{the_i1000}}</td></tr>
+  <tr><td>Rpetition 200 m:</td><td>{{the_r200}}</td></tr>
+  <tr><td>Rpetition 400 m:</td><td>{{the_r400}}</td></tr>
+  <tr><td>Rpetition 800 m:</td><td>{{the_r800}}</td></tr>
+</table>
+{% endblock %}
