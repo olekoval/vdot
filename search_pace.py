@@ -7,20 +7,24 @@ from list_vdot import pace, dist, km_5, km_10
 
 app = Flask(__name__)
 
-@app.route('/')
 
+@app.route('/')
 @app.route('/entry')
 def entry_page() -> 'html':
-    """        
-    отображение формы ввода данных - entry.html с дальнейшей передачей данных по методу
-    POST из формы на URL '/searhvdot' для вывода темпов тренировок
-    return render_template('entry.html', the_title='Определение темпа')
+    """ 
+    отображет форму ввода данных - entry.html с дальнейшей передачей данных по методу
+    POST из формы entry.html на URL '/searhvdot' для вывода темпов тренировок    
     """
-    return render_template('entry.html', the_title='YES')
+    return render_template('entry.html', the_title='Введите время прохождения дистанции')
 
 
 @app.route('/searchvdot', methods=['POST'])
 def do_search() ->'html':
+    """ 
+    выводит в 'pace.htm'l данные по темпам различных видов тренировки на основании данных
+    полученных из формы в 'entry.html'. Для нахождения VDOT используется функция 'find_vdot()',
+    показатели темпа беруться из словаря 'pace'.
+    """
     title = 'Результаты расчета'
     hr = request.form['hr'] # часы
     mt = request.form['mt'] # минуты
@@ -37,9 +41,9 @@ def do_search() ->'html':
     i1200 = pace[vdot]['i1200'] # pace interval 12000m
     r200 = pace[vdot]['r200'] # pace repetition 200m
     r400 = pace[vdot]['r400'] # pace repetition 400m 
-    r800 = pace[vdot]['r800'] # pace repetition 800m 
-    
+    r800 = pace[vdot]['r800'] # pace repetition 800m     
     return render_template('pace.html', the_vdot=vdot, the_e=e, the_m=m, the_t400=t400,
                            the_t1000=t1000, the_i400=i400, the_i1000=i1000, the_i1200=i1200,
                            the_r200=r200, the_r400=r400, the_r800=r800, the_title=title)       
-app.run()
+if __name__=='__main__':
+    app.run(debug=True)
