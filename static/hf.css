@@ -31,6 +31,7 @@ table {
 td, th {
   padding:          5px;
   text-align:       left;
+  background-color: #cc6600;
 }
 .copyright {
   font-size:        75%;
@@ -53,11 +54,19 @@ border:             1px solid #909090;
 color:              #2a2a2a;
 padding:            5px 5px 2px;
 border-collapse:    collapse;
+width:              210px;
 }
 
 td, th {
 border:             thin dotted gray;
 }
+
+caption {
+  font-style: italic;
+  padding-top: 8px;
+}
+
+
 
 /*** Inputs ***/
 input[type=text] {
